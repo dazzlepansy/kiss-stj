@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+make install
+make install-man

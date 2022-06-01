@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+export PKG_CONFIG_PATH='/usr/local/lib/pkgconfig'
+mkdir build
+cd build
+meson -Dpulseaudio=false ..
+ninja
+ninja install

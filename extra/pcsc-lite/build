@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+./configure $KISS_CONFIGURE \
+	--prefix=/usr \
+	--disable-libsystemd \
+	--disable-libudev
+make
+make install

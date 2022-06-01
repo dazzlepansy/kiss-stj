@@ -1,0 +1,13 @@
+diff --git a/sfeed_update b/sfeed_update
+index fc7447f..6f22988 100755
+--- a/sfeed_update
++++ b/sfeed_update
+@@ -49,7 +49,7 @@ log_error() {
+ # fetch(name, url, feedfile)
+ fetch() {
+ 	# fail on redirects, hide User-Agent, timeout is 15 seconds.
+-	curl -L --max-redirs 0 -H "User-Agent:" -f -s -m 15 \
++	curl -L -f -s -m 15 \
+ 		"$2" 2>/dev/null
+ }
+ 

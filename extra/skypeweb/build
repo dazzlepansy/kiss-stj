@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+cd skypeweb
+export PKG_CONFIG_PATH='/usr/local/lib/pkgconfig'
+make
+mkdir -p "$1$(pkg-config --variable=plugindir purple)"
+cp libskypeweb.so "$1$(pkg-config --variable=plugindir purple)"

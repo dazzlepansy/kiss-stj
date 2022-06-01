@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+cmake \
+	-DCMAKE_BUILD_TYPE=Release \
+	-DCBOR_CUSTOM_ALLOC=ON \
+	.
+make
+make install

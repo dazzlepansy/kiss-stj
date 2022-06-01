@@ -1,0 +1,4 @@
+libconfuse
+libnl
+meson make
+yajl

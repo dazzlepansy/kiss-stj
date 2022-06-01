@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+sed 's/mdev/smdev/' config.def.h > _
+mv _ config.def.h
+
+make clean
+make
+make install
+
+#mkdir -p "$1/lib/mdev"
+#mkdir -p "$1/etc"
+#cp mdev/etc/mdev.conf "$1/etc"
+#cp mdev/lib/* "$1/lib/mdev"

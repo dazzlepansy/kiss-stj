@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+unzip docbook-xml-4.3.zip
+install -v -d -m 755 "$1/usr/share/xml/docbook/xml-dtd-4.3" &&
+	install -v -d -m 755 "$1/etc/xml" &&
+	chown -R root:root . &&
+	cp -af docbook.cat *.dtd ent/ *.mod \
+		"$1/usr/share/xml/docbook/xml-dtd-4.3"
+

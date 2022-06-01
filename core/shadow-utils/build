@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+./configure $KISS_CONFIGURE \
+	--prefix=/usr \
+	--exec-prefix=/usr \
+	--sbindir=/usr/bin \
+	--bindir=/usr/bin
+make
+make install
+
+# Fix the sbin location.
+find "$1/usr/sbin" -type f | xargs -I % mv % "$1/usr/bin"
+rm -rf "$1/usr/sbin"

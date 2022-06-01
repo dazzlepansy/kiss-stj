@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+make clean
+make
+make DESTDIR=$1 MANPREFIX=/usr/local/man install

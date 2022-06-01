@@ -1,0 +1,21 @@
+#!/bin/sh -e
+
+for patch in *.patch; do
+	patch -p1 < "$patch"
+done
+
+sed -e "s/^CFLAGS/#CFLAGS/" \
+	-e "s/^LDFLAGS/#LDFLAGS/" \
+	-e 's/^CC = cc$/#CC = cc/' \
+	-e 's/^AR = ar$/#AR = ar/' \
+	config.mk > _
+mv _ config.mk
+echo "CFLAGS = $CFLAGS -static" >> config.mk
+echo "LDFLAGS = $LDFLAGS -static" >> config.mk
+
+make ubase-box
+make DESTDIR="$1" PREFIX=/usr ubase-box-install
+
+# Remove 'su' which doesn't support '-c'.
+#unlink "$1/usr/bin/su"
+#unlink "$1/usr/bin/stat"

@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+# Fixes
+find . -type f -exec grep -l '/bin/svc\.d' {} \+ |
+	xargs -I % sh -c "sed 's|/bin/svc\.d|/usr/bin/svc.d|g' % > _ && mv _ %"
+sed 's/PPID \$BIN/PPID \$SERVICE' svc.d/bare.sh > _
+mv _ svc.d/bare.sh
+chmod +x svc.d/bare.sh
+
+install -m 755 -D bin/service "$1/usr/bin/service"
+install -m 755 -D bin/svc "$1/usr/bin/svc"
+cp -r svc.d "$1/usr/bin/svc.d"
+
+# Custom init scripts.
+install -D nldev "$1/usr/bin/svc.d/avail/nldev"
+touch "$1/usr/bin/svc.d/avail/pcscd"
+touch "$1/usr/bin/svc.d/avail/sdhcp"
+touch "$1/usr/bin/svc.d/avail/wpa_supplicant"
+
+# Install the license
+install -m 755 -D LICENSE "$1/usr/share/LICENSES/svc.license"

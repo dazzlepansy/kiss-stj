@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+export PKG_CONFIG_PATH='/usr/local/lib/pkgconfig'
+./configure $KISS_CONFIGURE \
+	--prefix=/usr \
+	--disable-avahi \
+	--disable-dbus \
+	--disable-gstreamer \
+	--disable-gtkui \
+	--disable-idn \
+	--disable-meanwhile \
+	--disable-nls \
+	--disable-tcl \
+	--disable-vv \
+	--enable-consoleui
+make
+make install

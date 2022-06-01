@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+./configure $KISS_CONFIGURE \
+	--prefix=/usr \
+	--disable-ssh-token
+make
+make install

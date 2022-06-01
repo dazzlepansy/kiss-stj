@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+./bootstrap
+export PCSC_CFLAGS="-I/usr/local/include/PCSC"
+./configure $KISS_CONFIGURE \
+	--disable-strict \
+	--prefix=/usr \
+	--sysconfdir=/etc/opensc
+make
+make install
