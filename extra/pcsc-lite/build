@@ -2,6 +2,8 @@
 
 ./configure $KISS_CONFIGURE \
 	--prefix=/usr \
+	--bindir=/usr/bin \
+	--sbindir=/usr/bin \
 	--disable-libsystemd \
 	--disable-libudev
 make
