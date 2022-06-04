@@ -15,6 +15,7 @@ cp -r svc.d "$1/usr/bin/svc.d"
 install -D nldev "$1/usr/bin/svc.d/avail/nldev"
 touch "$1/usr/bin/svc.d/avail/pcscd"
 touch "$1/usr/bin/svc.d/avail/sdhcp"
+touch "$1/usr/bin/svc.d/avail/seatd"
 touch "$1/usr/bin/svc.d/avail/wpa_supplicant"
 
 # Install the license
