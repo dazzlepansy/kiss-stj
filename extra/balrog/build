@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+install -m 711 balrog "$1/usr/bin/balrog"
+ln -s /usr/bin/balrog "$1/usr/bin/pass"
