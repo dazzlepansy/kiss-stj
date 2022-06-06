@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+mkdir -p "$1/usr/share/fonts/OTF/hermit"
+
+gzip --decompress --stdout packages/otf-hermit-2.0.tar.gz |
+	tar -x -C "$1/usr/share/fonts/OTF/hermit"
+
+# Ensure that font files are readable.
+chmod 644 "$1/usr/share/fonts/OTF/hermit/*.otf"
