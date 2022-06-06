@@ -1,4 +1,8 @@
 #!/usr/bin/env sh
 
+# Busybox flock doesn't support -w.
+sed 's/FLOCK -x -w $LOCKTIMEOUT/FLOCK -x/' tlp-func-base.in > _
+mv -f _ tlp-func-base.in
+
 make install
 make install-man
