@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PID=$(pidof -o %PPID run_nldev)
+PID=$(pidof -o %PPID nldev)
 
 case $1 in
 	-s)
