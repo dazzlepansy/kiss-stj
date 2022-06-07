@@ -4,5 +4,9 @@
 sed 's/FLOCK -x -w $LOCKTIMEOUT/FLOCK -x/' tlp-func-base.in > _
 mv -f _ tlp-func-base.in
 
+# The -m flag is not standard for grep.
+sed 's/grep -E -q -m 1/grep -E -q/' func.d/10-tlp-func-cpu > _
+mv -f _ func.d/10-tlp-func-cpu
+
 make install
 make install-man
