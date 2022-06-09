@@ -6,7 +6,7 @@ sed 's/\/usr\/local/\/usr/' config.mk > _
 mv _ config.mk
 sed -e '/fuse/a \\t{ "hidraw[0-9]", "root", "plugdev", 0660, NULL, NULL },' \
 	-e '/fuse/a \\t{ "hiddev[0-9]", "root", "plugdev", 0660, NULL, NULL },' \
-	-e 's/"tty[0-9]",     "root", "root",  0600,/"tty[0-9]",     "root", "tty",  0660,/' \
+	-e 's/"tty\[0-9\]",     "root", "root",  0600,/"tty\[0-9\]",     "root", "tty",   0660,/' \
 	config.def.h > _
 mv _ config.def.h
 
