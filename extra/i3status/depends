@@ -2,3 +2,4 @@ libconfuse
 libnl
 meson make
 yajl
+bash make
