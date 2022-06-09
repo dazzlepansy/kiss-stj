@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-export PCSC_CFLAGS="-I/usr/local/include/PCSC"
-export PCSC_LIBS="-L/usr/local/lib -lpcsclite"
+export PCSC_CFLAGS="-I/usr/include/PCSC"
+export PCSC_LIBS="-L/usr/lib -lpcsclite"
 ./configure $KISS_CONFIGURE \
 	--prefix=/usr \
 	--enable-usbdropdir=/usr/local/lib/pcsc/drivers
