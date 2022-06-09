@@ -1,9 +1,11 @@
 #!/usr/bin/env sh
 
-# Fixes
+# Switch all the paths from /bin to to /usr/bin.
 find . -type f -exec grep -l '/bin/svc\.d' {} \+ |
 	xargs -I % sh -c "sed 's|/bin/svc\.d|/usr/bin/svc.d|g' % > _ && mv _ %"
-sed 's/PPID \$BIN/PPID \$SERVICE/' svc.d/bare.sh > _
+# pgrep works better than pidof, especially when a daemon has
+# forked to the background. Neither is POSIX, so I don't suppose it matters.
+sed 's/pidof -o %PPID \$BIN/pgrep ^\$SERVICE\$/' svc.d/bare.sh > _
 mv -f _ svc.d/bare.sh
 chmod +x svc.d/bare.sh
 
@@ -12,7 +14,10 @@ install -m 755 -D bin/svc "$1/usr/bin/svc"
 cp -r svc.d "$1/usr/bin/svc.d"
 
 # Custom init scripts.
+touch "$1/usr/bin/svc.d/avail/dhcpcd"
 install -D nldev "$1/usr/bin/svc.d/avail/nldev"
+rm "$1/usr/bin/svc.d/avail/ntpd" "$1/usr/bin/svc.d/default/ntpd"
+touch "$1/usr/bin/svc.d/avail/ntpd"
 touch "$1/usr/bin/svc.d/avail/pcscd"
 touch "$1/usr/bin/svc.d/avail/sdhcp"
 touch "$1/usr/bin/svc.d/avail/seatd"
