@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+sed 's/^sbindir=\/sbin/sbindir=\/bin/' Makefile > _
+mv -f _ Makefile
+
+make
+make install
