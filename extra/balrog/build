@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 
 mkdir -p "$1/usr/bin"
-install -m 711 balrog "$1/usr/bin/balrog"
+install -m 755 balrog "$1/usr/bin/balrog"
 ln -s /usr/bin/balrog "$1/usr/bin/pass"
