@@ -1,0 +1,16 @@
+# kiss-stj
+
+A KISS Linux repository for packages I use on my systems.
+
+Packages are provided for reference and with no guarantees. Wherever a
+`configure` script is called, I've also included a $KISS_CONFIGURE variable
+that allows people to hook into the configure process without changing the
+packaging scripts, e.g. when cross-compiling.
+
+## Known Issues
+
+I expect some of the dependencies aren't listed because they were already
+installed on my system. I also haven't been 100% clear on differentiating
+build from runtime dependencies. That said, if something doesn't build then
+the dependency should be available from the community repo so you can just
+install it and try again.
