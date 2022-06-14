@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
 cmake \
+	-DCMAKE_INSTALL_PREFIX=/usr \
 	-DCMAKE_C_FLAGS="$CFLAGS -L/usr/local/lib64 -lcbor" \
 	-B build
 make -C build
