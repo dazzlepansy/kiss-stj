@@ -22,6 +22,7 @@ touch "$1/usr/bin/svc.d/avail/pcscd"
 touch "$1/usr/bin/svc.d/avail/sdhcp"
 touch "$1/usr/bin/svc.d/avail/seatd"
 touch "$1/usr/bin/svc.d/avail/wpa_supplicant"
+chmod +x "$1/usr/bin/svc.d/avail/*"
 
 # Install the license
 install -m 755 -D LICENSE "$1/usr/share/LICENSES/svc.license"
