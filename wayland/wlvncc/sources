@@ -1,0 +1,3 @@
+git+https://github.com/any1/wlvncc.git
+git+https://github.com/any1/aml.git subprojects/aml
+git+https://github.com/LibVNC/libvncserver.git subprojects/libvncserver
