@@ -2,4 +2,4 @@
 
 make clean
 make
-make DESTDIR=$1 MANPREFIX=/usr/local/man install
+make DESTDIR=$1 PREFIX=/usr MANPREFIX=/usr/man install
