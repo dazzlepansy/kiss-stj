@@ -4,6 +4,7 @@
 	--prefix=/usr \
 	--bindir=/usr/bin \
 	--sbindir=/usr/bin \
+	--enable-usbdropdir=/usr/lib/pcsc/drivers \
 	--disable-libsystemd \
 	--disable-libudev
 make
