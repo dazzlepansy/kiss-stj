@@ -1,2 +1,12 @@
+ffmpeg
+gnutls
+libdrm
+libgcrypt
+libjpeg-turbo
+libxkbcommon
+mesa
 meson make
+pixman
+wayland
 wayland-protocols
+zlib
