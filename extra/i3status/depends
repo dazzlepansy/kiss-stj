@@ -3,3 +3,4 @@ libnl
 meson make
 yajl
 bash make
+alsa-lib
