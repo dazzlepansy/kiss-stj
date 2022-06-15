@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+cd tools/usb/usbip
+./autogen.sh
+./configure \
+	$KISS_CONFIGURE \
+	--prefix=/usr
+make
+make install
