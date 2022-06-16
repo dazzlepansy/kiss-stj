@@ -1,2 +1,4 @@
 finch
+glib
 json-glib
+zlib
