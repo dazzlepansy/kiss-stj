@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+unzip SmartyPants_1.5.1.zip
+mkdir -p "$1/usr/bin"
+install -m 755 SmartyPants_1.5.1/SmartyPants.pl "$1/usr/bin/smartypants"
