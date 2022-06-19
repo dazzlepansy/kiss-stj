@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+cmake -DCMAKE_INSTALL_PREFIX=/usr .
+make
+make install
