@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
-export PKG_CONFIG_PATH='/usr/local/lib/pkgconfig'
 mkdir build
 cd build
 meson --prefix=/usr -Dpulseaudio=false ..
