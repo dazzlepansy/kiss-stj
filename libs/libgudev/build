@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+meson build \
+	--prefix=/usr \
+	-Dtests=disabled \
+	-Dintrospection=enabled \
+	-Dgtk_doc=false \
+	-Dvapi=enabled
+ninja -C build
+ninja -C build install
