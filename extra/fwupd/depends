@@ -7,11 +7,13 @@ gnutls
 gobject-introspection
 gpgme
 json-glib
+libftdi1
 libgpg-error
 libgudev
 libusb
 meson make
 pango
+pciutils
 protobuf-c
 pygobject
 vala

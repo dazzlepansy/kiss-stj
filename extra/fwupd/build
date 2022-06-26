@@ -9,6 +9,7 @@ meson build \
 	-Dtests=false \
 	-Dudevdir=/etc/udev \
 	-Dplugin_dell=false \
+	-Dplugin_flashrom=true \
 	-Dplugin_tpm=false
 
 ninja -C build
