@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+meson build --prefix=/usr
+ninja -C build
+ninja -C build install
