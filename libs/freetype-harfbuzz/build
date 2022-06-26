@@ -24,7 +24,7 @@ build_harfbuzz() (
         -Ddefault_library=both \
         -Dglib=disabled \
         -Dfreetype=enabled \
-        -Dgobject=disabled \
+        -Dgobject=enabled \
         -Dcairo=disabled \
         -Dicu=disabled \
         -Dbenchmark=disabled \
@@ -41,6 +41,8 @@ export CFLAGS="$CFLAGS -L$DESTDIR/usr/lib "
 export PKG_CONFIG_PATH=$DESTDIR/usr/lib/pkgconfig
 
 # Point Harfbuzz to the Freetype files.
+export CFLAGS="$CFLAGS -I$DESTDIR/usr/include/freetype2"
+export CFLAGS="$CFLAGS -L$DESTDIR/usr/lib"
 export CXXFLAGS="$CXXFLAGS -I$DESTDIR/usr/include/freetype2"
 export CXXFLAGS="$CXXFLAGS -L$DESTDIR/usr/lib"
 
