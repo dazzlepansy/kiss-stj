@@ -2,5 +2,6 @@ cairo
 fontconfig
 freetype-harfbuzz
 glib
+gobject-introspection
 meson   make
 pkgconf make

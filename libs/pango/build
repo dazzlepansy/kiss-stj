@@ -14,7 +14,7 @@ meson \
     --prefix=/usr \
     -Dgtk_doc=false \
     -Dxft=disabled \
-    -Dintrospection=disabled \
+    -Dintrospection=enabled \
     . build
 
 ninja -C build
