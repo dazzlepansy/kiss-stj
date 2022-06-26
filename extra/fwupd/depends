@@ -1,0 +1,18 @@
+efibootmgr
+gcab
+gettext-tiny
+glib
+gnu-efi
+gnutls
+gobject-introspection
+gpgme
+json-glib
+libgpg-error
+libgudev
+libusb
+meson make
+pango
+protobuf-c
+pygobject
+vala
+xz

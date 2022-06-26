@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+meson build \
+	--prefix=/usr \
+	-Ddocs=none \
+	-Dpolkit=false \
+	-Dsystemd=false \
+	-Dtests=false \
+	-Dudevdir=/etc/udev \
+	-Dplugin_dell=false \
+	-Dplugin_tpm=false
+
+ninja -C build
+ninja -C build install
