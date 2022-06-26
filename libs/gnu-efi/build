@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+for file in patches/* ; do
+	patch -p1 < "$file"
+done
+
+sed 's/^PREFIX       := \/usr\/local/PREFIX       := \/usr/' Make.defaults > _
+mv -f _ Make.defaults
+
+make
+make install
