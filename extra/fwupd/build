@@ -3,6 +3,7 @@
 meson build \
 	--prefix=/usr \
 	-Ddocs=none \
+	-Defi_binary=false \
 	-Dpolkit=false \
 	-Dsystemd=false \
 	-Dtests=false \
