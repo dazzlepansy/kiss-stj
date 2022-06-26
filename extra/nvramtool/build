@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+cd util/nvramtool
+
+sed -e 's/^PREFIX  = \/usr\/local/PREFIX  = \/usr/' \
+	-e 's/\$(INSTALL) -p/$(INSTALL)/' \
+	Makefile > _
+mv -f _ Makefile
+
+# Fix build for musl systems.
+sed 's/__GLIBC__/__linux__/' accessors/cmos-hw-unix.c > _
+mv -f _ accessors/cmos-hw-unix.c
+
+make
+make install
