@@ -1,0 +1,5 @@
+meson make
+nvramtool
+qt5
+qt5-svg
+yaml-cpp

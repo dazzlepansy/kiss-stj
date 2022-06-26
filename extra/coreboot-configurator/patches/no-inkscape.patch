@@ -1,0 +1,50 @@
+diff --git a/src/resources/meson.build b/src/resources/meson.build
+index 12270ab..a9f2773 100644
+--- a/src/resources/meson.build
++++ b/src/resources/meson.build
+@@ -20,24 +20,24 @@ install_data(desktop_sources,
+ 	     install_dir: desktop_dir)
+ 
+ # Icon
+-inkscape = find_program('inkscape')
+-icon_dir = join_paths(get_option('datadir'),'icons', 'hicolor')
+-foreach size: get_option('sizes')
+-	target_temp_name = '@0@'.format(size)
+-	dpi=size.to_int() * 2
+-	png = configure_file(
+-		input: 'coreboot_configurator.svg',
+-		output: target_temp_name + '.png',
+-		command: [
+-			inkscape,
+-			'--export-height=@0@'.format(size),
+-			'--export-width=@0@'.format(size),
+-			'--export-png=@OUTPUT@',
+-			'@INPUT@',
+-		]
+-	)
+-
+-	install_data(png,
+-		     rename: meson.project_name() + '.png',
+-		     install_dir: join_paths(icon_dir, '@0@x@1@'.format(size, size), 'apps'))
+-endforeach
++#inkscape = find_program('inkscape')
++#icon_dir = join_paths(get_option('datadir'),'icons', 'hicolor')
++#foreach size: get_option('sizes')
++#	target_temp_name = '@0@'.format(size)
++#	dpi=size.to_int() * 2
++#	png = configure_file(
++#		input: 'coreboot_configurator.svg',
++#		output: target_temp_name + '.png',
++#		command: [
++#			inkscape,
++#			'--export-height=@0@'.format(size),
++#			'--export-width=@0@'.format(size),
++#			'--export-png=@OUTPUT@',
++#			'@INPUT@',
++#		]
++#	)
++#
++#	install_data(png,
++#		     rename: meson.project_name() + '.png',
++#		     install_dir: join_paths(icon_dir, '@0@x@1@'.format(size, size), 'apps'))
++#endforeach
