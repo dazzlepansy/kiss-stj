@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
-export CFLAGS="$CFLAGS -I/usr/include/nss -I/usr/include/nspr"
 make
 mkdir -p "$1$(pkg-config --variable=plugindir purple)"
 cp libdiscord.so "$1$(pkg-config --variable=plugindir purple)"
