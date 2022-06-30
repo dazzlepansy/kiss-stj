@@ -1,0 +1,18 @@
+cyrus-sasl
+glib
+gst-plugins-base
+gstreamer
+json-glib
+libcacard
+libepoxy
+libjpeg-turbo
+libusb
+meson make
+openssl
+opus
+pixman
+pyparsing
+python-six
+spice-protocol
+usbredir
+zlib

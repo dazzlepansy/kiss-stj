@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+# Disable the requirement for x11.
+sed "s/spice_gtk_deps += dependency('x11')/#spice_gtk_deps += dependency('x11')/" meson.build > _
+mv -f _ meson.build
+
+meson build \
+	--prefix=/usr \
+	-Dcoroutine=gthread \
+	-Dgtk=enabled \
+	-Dgtk_doc=disabled \
+	-Dintrospection=disabled \
+	-Dvapi=disabled \
+	-Dpolkit=disabled \
+	-Dsmartcard=enabled \
+	-Dusbredir=enabled \
+	-Dwayland-protocols=enabled \
+	-Dwebdav=disabled
+
+ninja -C build
+ninja -C build install
