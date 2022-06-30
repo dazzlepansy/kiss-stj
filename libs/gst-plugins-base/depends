@@ -1,0 +1,13 @@
+alsa-lib
+bzip2
+cairo
+expat
+fontconfig
+freetype-harfbuzz
+glib
+gstreamer
+mesa
+opus
+pango
+pixman
+zlib
