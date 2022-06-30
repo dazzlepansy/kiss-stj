@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+meson build \
+	--prefix=/usr \
+	-Dx11=false
+ninja -C build
+ninja -C build install
