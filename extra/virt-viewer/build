@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+for file in patches/* ; do
+	patch -p1 < "$file"
+done
+
+meson build \
+	--prefix=/usr \
+	-Dspice=enabled \
+	-Dvnc=disabled
+
+ninja -C build
+ninja -C build install
