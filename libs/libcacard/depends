@@ -1,0 +1,5 @@
+glib
+meson make
+nspr
+nss
+pcsc-lite
