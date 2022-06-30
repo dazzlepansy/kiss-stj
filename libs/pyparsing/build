@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+# pyparsing contains some files with old timestamps, which causes the build
+# to fail with the following error:
+# "ZIP does not support timestamps before 1980"
+# This is easily fixed by just touching all the files so they look newer.
+find . -type f -exec touch {} \+
+
+pip install --root="$1" .
