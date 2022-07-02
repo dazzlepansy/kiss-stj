@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+for file in patches/* ; do
+	patch -p1 < "$file"
+done
+
+./configure \
+	$KISS_CONFIGURE \
+	--prefix=/usr \
+	--enable-busybox-workaround &&
+	make &&
+	make install-strip

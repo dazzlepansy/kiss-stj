@@ -1,0 +1,3 @@
+https://downloads.sourceforge.net/firejail/firejail-VERSION.tar.xz
+patches/gawk.patch patches
+patches/posix-date-sed.patch patches

@@ -1,0 +1,52 @@
+diff --git a/configure b/configure
+index f6544c4..d1d375f 100755
+--- a/configure
++++ b/configure
+@@ -3405,7 +3405,7 @@ if test "x$enable_man" != "xno"; then :
+ 
+ 	HAVE_MAN="-DHAVE_MAN"
+ 	# Extract the first word of "gawk", so it can be a program name with args.
+-set dummy gawk; ac_word=$2
++set dummy awk; ac_word=$2
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+ $as_echo_n "checking for $ac_word... " >&6; }
+ if ${ac_cv_prog_HAVE_GAWK+:} false; then :
+diff --git a/src/bash_completion/Makefile.in b/src/bash_completion/Makefile.in
+index f7db9e6..0712fdd 100644
+--- a/src/bash_completion/Makefile.in
++++ b/src/bash_completion/Makefile.in
+@@ -4,7 +4,7 @@ all: firejail.bash_completion
+ include ../common.mk
+ 
+ firejail.bash_completion: firejail.bash_completion.in
+-	gawk -f ../man/preproc.awk -- $(MANFLAGS) < $< > $@.tmp
++	awk -f ../man/preproc.awk -- $(MANFLAGS) < $< > $@.tmp
+ 	sed "s|_SYSCONFDIR_|$(sysconfdir)|" < $@.tmp > $@
+ 	rm $@.tmp
+ 
+diff --git a/src/man/Makefile.in b/src/man/Makefile.in
+index fbd2d79..20a9b20 100644
+--- a/src/man/Makefile.in
++++ b/src/man/Makefile.in
+@@ -4,7 +4,7 @@ all: firecfg.man firejail.man firejail-login.man firejail-users.man firejail-pro
+ include ../common.mk
+ 
+ %.man: %.txt
+-	gawk -f ./preproc.awk -- $(MANFLAGS) < $< > $@
++	awk -f ./preproc.awk -- $(MANFLAGS) < $< > $@
+ 
+ .PHONY: clean
+ clean:; rm -fr *.man
+diff --git a/src/zsh_completion/Makefile.in b/src/zsh_completion/Makefile.in
+index a83cccf..34d8423 100644
+--- a/src/zsh_completion/Makefile.in
++++ b/src/zsh_completion/Makefile.in
+@@ -4,7 +4,7 @@ all: _firejail
+ include ../common.mk
+ 
+ _firejail: _firejail.in
+-	gawk -f ../man/preproc.awk -- $(MANFLAGS) < $< > $@.tmp
++	awk -f ../man/preproc.awk -- $(MANFLAGS) < $< > $@.tmp
+ 	sed "s|_SYSCONFDIR_|$(sysconfdir)|" < $@.tmp > $@
+ 	rm $@.tmp
+ 
