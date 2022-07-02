@@ -1,8 +1,8 @@
 diff --git a/mkman.sh b/mkman.sh
-index 79ad162..9ce10af 100755
+index 79ad162..3c4260b 100755
 --- a/mkman.sh
 +++ b/mkman.sh
-@@ -5,8 +5,9 @@
+@@ -5,8 +5,7 @@
  
  set -e
  
@@ -11,9 +11,7 @@ index 79ad162..9ce10af 100755
 -sed -i "s/MONTH/$MONTH/g" "$3"
 -YEAR="$(LC_ALL=C date -u --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y)"
 -sed -i "s/YEAR/$YEAR/g" "$3"
-+MONTH="$(python -c "import datetime; print(datetime.datetime.utcfromtimestamp(${SOURCE_DATE_EPOCH:-$(date +%s)}).strftime('%b'))")"
-+YEAR="$(python -c "import datetime; print(datetime.datetime.utcfromtimestamp(${SOURCE_DATE_EPOCH:-$(date +%s)}).strftime('%Y'))")"
 +sed -e "s/VERSION/$1/g" \
-+	-e "s/MONTH/$MONTH/g" \
-+	-e "s/YEAR/$YEAR/g" \
++	-e "s/MONTH/$(date -u +%b)/g" \
++	-e "s/YEAR/$(date -u +%Y)/g" \
 +	"$2" > "$3"
