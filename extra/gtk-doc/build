@@ -1,5 +1,0 @@
-#!/usr/bin/env sh
-
-./autogen.sh --prefix=/usr &&
-	make &&
-	make install

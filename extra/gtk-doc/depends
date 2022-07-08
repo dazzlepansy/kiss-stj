@@ -1,5 +1,0 @@
-autoconf make
-automake make
-docbook-xml
-docbook-xsl-stylesheets
-python
