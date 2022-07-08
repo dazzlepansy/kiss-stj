@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+# Don't build the docs, which pull in a lot of dependencies.
+sed "s/^subdir('doc')/#subdir('doc')/" meson.build > _
+mv -f _ meson.build
+
 meson build --prefix=/usr
 ninja -C build
 ninja -C build install

@@ -1,3 +1,5 @@
-gtk-doc
-meson
+glib
+libxml2
+meson make
+ncurses
 python-pygments
