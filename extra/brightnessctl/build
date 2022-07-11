@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+./configure \
+	$KISS_CONFIGURE \
+	--prefix=/usr \
+	--disable-udev \
+	--disable-logind
+make
+make install
