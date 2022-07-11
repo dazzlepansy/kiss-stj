@@ -2,4 +2,5 @@ meson make
 nvramtool
 qt5
 qt5-svg
+qt5-wayland
 yaml-cpp
