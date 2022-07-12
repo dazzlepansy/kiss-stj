@@ -5,6 +5,7 @@ meson build \
 	-Dtests=disabled \
 	-Dintrospection=enabled \
 	-Dgtk_doc=false \
-	-Dvapi=enabled
+	-Dvapi=disabled
+
 ninja -C build
 ninja -C build install
