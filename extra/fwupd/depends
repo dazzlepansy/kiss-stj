@@ -1,6 +1,5 @@
 efibootmgr
 gcab
-gettext-tiny
 glib
 gnu-efi
 gnutls
@@ -16,5 +15,4 @@ pango
 pciutils
 protobuf-c
 pygobject
-vala
 xz

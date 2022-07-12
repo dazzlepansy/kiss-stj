@@ -1,8 +1,13 @@
 #!/usr/bin/env sh
 
+for file in patches/* ; do
+	patch -p1 < "$file"
+done
+
 meson build \
 	--prefix=/usr \
 	-Ddocs=none \
+	-Dintrospection=false \
 	-Defi_binary=false \
 	-Dpolkit=false \
 	-Dsystemd=false \
@@ -10,7 +15,10 @@ meson build \
 	-Dudevdir=/etc/udev \
 	-Dplugin_dell=false \
 	-Dplugin_flashrom=true \
-	-Dplugin_tpm=false
+	-Dplugin_tpm=false \
+	-Dgusb:docs=false \
+	-Dgusb:vapi=false \
+	-Dlibjcat:vapi=false
 
 ninja -C build
 ninja -C build install
