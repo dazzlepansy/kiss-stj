@@ -1,4 +1,0 @@
-#!/usr/bin/env sh
-
-make LIBINTL=MUSL
-make LIBINTL=MUSL prefix=/usr install
