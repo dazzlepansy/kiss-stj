@@ -16,24 +16,7 @@ repo, and occasionally others such as [mmatongo/kiss-lang](https://github.com/mm
 Thanks, all you wonderful KISS folks for sharing your work in public repos!
 
 On the whole I only rely on other repos for dependencies so it does not
-matter whether this repo comes before or after the others. Some exceptions
-are:
-
-- sbase and ubase
-
-    I've forked these from the community repo for my own tweaks. By and
-    large the community versions are preferable, but if you want to use
-    my versions then kiss-stj should come before the community repo.
-
-- fwupd
-
-    fwupd relies on the following common packages being built with
-    introspection support: freetype-harfbuzz (kisslinux/repo), json-glib
-    (kiss-community/community), pango (kisslinux/repo), and protobuf-c
-    (kiss-community/community). If you intend to use fwupd, you must place
-    this repo *before* the others in your $KISS_PATH, preferably when you're
-    first installing KISS. Otherwise I expect you can remove the existing
-    packages and reinstall them from this repo.
+matter whether this repo comes before or after the others.
 
 ## Known Issues
 

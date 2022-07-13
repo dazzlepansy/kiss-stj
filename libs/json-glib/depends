@@ -1,6 +1,0 @@
-glib
-gobject-introspection
-meson make
-pkgconf make
-python
-samurai make

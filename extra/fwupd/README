@@ -1,1 +1,0 @@
-fwupd runs as a D-Bus service, so you have to have the systemwide D-Bus daemon running. Then, when you run fwupdmgr, D-Bus should automatically launch fwupd.
