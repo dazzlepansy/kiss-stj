@@ -21,6 +21,7 @@ touch "$1/usr/bin/svc.d/avail/ntpd"
 touch "$1/usr/bin/svc.d/avail/pcscd"
 touch "$1/usr/bin/svc.d/avail/sdhcp"
 touch "$1/usr/bin/svc.d/avail/seatd"
+install -D tlp "$1/usr/bin/svc.d/avail/tlp"
 touch "$1/usr/bin/svc.d/avail/wpa_supplicant"
 chmod +x "$1/usr/bin/svc.d/avail"/*
 

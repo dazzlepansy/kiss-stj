@@ -1,0 +1,14 @@
+#!/bin/sh
+
+case $1 in
+	-s)
+		tlp init start
+		;;
+	-k)
+		tlp init stop
+		;;
+	*)
+		echo "usage: $0 -s|-k"
+		exit 1
+esac
+
