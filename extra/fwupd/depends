@@ -15,4 +15,5 @@ pango
 pciutils
 protobuf-c
 pygobject
+tpm2-tss
 xz

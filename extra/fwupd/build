@@ -14,11 +14,12 @@ meson build \
 	-Dtests=false \
 	-Dudevdir=/etc/udev \
 	-Dplugin_dell=false \
-	-Dplugin_flashrom=true \
-	-Dplugin_tpm=false \
 	-Dgusb:docs=false \
 	-Dgusb:vapi=false \
 	-Dlibjcat:vapi=false
 
 ninja -C build
 ninja -C build install
+
+mkdir -p "$1/usr/share/dbus-1/system-services"
+sed 's|@libexecdir@|/usr/libexec|' data/org.freedesktop.fwupd.service.in > "$1/usr/share/dbus-1/system-services/org.freedesktop.fwupd.service"
