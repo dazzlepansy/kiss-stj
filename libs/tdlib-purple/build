@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+mkdir -p build
+cd build
+cmake \
+	-DCMAKE_INSTALL_PREFIX=/usr \
+	-DNoTranslations=True \
+	-DNoVoip=True \
+	..
+make
+make install

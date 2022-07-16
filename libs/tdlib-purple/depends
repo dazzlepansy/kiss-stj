@@ -1,0 +1,7 @@
+cmake make
+finch
+glib
+libpng
+openssl
+tdlib
+zlib
