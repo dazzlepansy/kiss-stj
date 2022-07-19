@@ -14,8 +14,11 @@ install -m 755 -D bin/svc "$1/usr/bin/svc"
 cp -r svc.d "$1/usr/bin/svc.d"
 
 # Custom init scripts.
+# Use cron's defaults. The params here won't work with busybox cron.
+rm "$1/usr/bin/svc.d/default/crond"
 touch "$1/usr/bin/svc.d/avail/dhcpcd"
 install -D nldev "$1/usr/bin/svc.d/avail/nldev"
+# Replace the custom script with defaults.
 rm "$1/usr/bin/svc.d/avail/ntpd" "$1/usr/bin/svc.d/default/ntpd"
 touch "$1/usr/bin/svc.d/avail/ntpd"
 touch "$1/usr/bin/svc.d/avail/pcscd"
