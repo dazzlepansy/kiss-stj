@@ -1,4 +1,5 @@
 cmake make
 finch
+gperf
 openssl
 zlib
