@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+sed 's/gunzip/gzip --decompress/' data/Makefile.in > _
+mv -f _ data/Makefile.in
+
+./configure \
+	$KISS_CONFIGURE \
+	--prefix=/usr \
+	--disable-vlock
+make
+make install
