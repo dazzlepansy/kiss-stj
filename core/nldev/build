@@ -1,13 +1,12 @@
 #!/usr/bin/env sh
 
 sed 's/mdev/smdev/' config.def.h > _
-mv _ config.def.h
+mv -f _ config.def.h
+
+sed 's|^#!/bin/busybox ash$|#!/usr/bin/env sh|' run_nldev > _
+mv -f _ run_nldev
+chmod +x run_nldev
 
 make clean
 make
 make install
-
-#mkdir -p "$1/lib/mdev"
-#mkdir -p "$1/etc"
-#cp mdev/etc/mdev.conf "$1/etc"
-#cp mdev/lib/* "$1/lib/mdev"
