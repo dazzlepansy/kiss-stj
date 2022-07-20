@@ -1,8 +1,11 @@
 #!/usr/bin/env sh
 
 # Switch all the paths from /bin to to /usr/bin.
-find . -type f -exec grep -l '/bin/svc\.d' {} \+ |
-	xargs -I % sh -c "sed 's|/bin/svc\.d|/usr/bin/svc.d|g' % > _ && mv _ %"
+find . -type f -exec grep -l '/bin/' {} \+ |
+	while IFS= read -r file ; do
+		sed 's|/bin/|/usr/bin/|g' "$file" > _
+		mv -f _ "$file"
+	done
 # pgrep works better than pidof, especially when a daemon has
 # forked to the background. Neither is POSIX, so I don't suppose it matters.
 sed 's/pidof -o %PPID \$BIN/pgrep ^\$SERVICE\$/' svc.d/bare.sh > _
