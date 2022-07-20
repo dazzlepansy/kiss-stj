@@ -8,7 +8,7 @@ sed -e '/fuse/a \\t{ "hidraw[0-9]", "root", "plugdev", 0660, NULL, NULL },' \
 	-e '/fuse/a \\t{ "hiddev[0-9]", "root", "plugdev", 0660, NULL, NULL },' \
 	-e '/fuse/a \\t{ "bus/usb/[0-9]+/[0-9]+", "root", "plugdev", 0660, NULL, "@chgrp plugdev /dev/bus/usb/*/* && chmod 660 /dev/bus/usb/*/*" },' \
 	-e 's/"tty\[0-9\]",     "root", "root",  0600,/"tty\[0-9\]",     "root", "tty",   0660,/' \
-	-e 's/"input\/\.\*",     "root", "root",  0640,/"input\/\.\*",     "root", "input", 0660,/' \
+	-e 's|"input/\.\*",     "root", "root",  0640, "=input/", NULL|"input/\.\*",     "root", "input", 0660, "=input/", "*/usr/bin/libudev-zero-helper"|' \
 	config.def.h > _
 mv _ config.def.h
 
