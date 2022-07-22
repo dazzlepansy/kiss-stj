@@ -7,12 +7,6 @@ find . -type f -exec grep -l '/bin/' {} \+ |
 		mv -f _ "$file"
 	done
 
-# pgrep works better than pidof, especially when a daemon has
-# forked to the background. Neither is POSIX, so I don't suppose it matters.
-sed 's/pidof -o %PPID \$BIN/pgrep ^\$SERVICE\$/' svc.d/bare.sh > _
-mv -f _ svc.d/bare.sh
-chmod +x svc.d/bare.sh
-
 # Don't start ntpd until the network is up.
 sed "s/if \[ -z \"\$PID\" \]/if [ -z \"\$PID\" ] \&\& (route | tail -n 1 | tr -s ' ' | cut -f 4 -d ' ' | grep -q U)/" svc.d/avail/ntpd > _
 mv -f _ svc.d/avail/ntpd
