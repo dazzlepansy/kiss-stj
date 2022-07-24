@@ -11,7 +11,7 @@ meson make
 openssl
 opus
 pixman
-pyparsing
+python-pyparsing
 python-six
 spice-protocol
 usbredir
