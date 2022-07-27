@@ -6,6 +6,7 @@ find . -type f -exec grep -l '/bin/' {} \+ |
 		sed 's|/bin/|/usr/bin/|g' "$file" > _
 		mv -f _ "$file"
 	done
+chmod +x svc.d/bare.sh
 
 # Don't start ntpd until the network is up.
 sed "s/if \[ -z \"\$PID\" \]/if [ -z \"\$PID\" ] \&\& (route | tail -n 1 | tr -s ' ' | cut -f 4 -d ' ' | grep -q U)/" svc.d/avail/ntpd > _
