@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+make
+mkdir -p "$1/usr/bin" "$1/usr/share/man/man1"
+install -m 755 sl "$1/usr/bin"
+install sl.1 "$1/usr/share/man/man1"
