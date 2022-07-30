@@ -1,0 +1,6 @@
+finch
+glib
+http-parser
+json-glib
+olm
+sqlite
