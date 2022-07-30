@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+cmake . -Bbuild \
+	-DCMAKE_INSTALL_PREFIX=/usr \
+	-DCMAKE_INSTALL_LIBDIR=lib
+cmake --build build
+make install PREFIX=/usr
