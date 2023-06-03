@@ -1,2 +1,2 @@
-https://virt-manager.org/download/sources/virt-viewer/virt-viewer-11.0.tar.xz
+https://releases.pagure.org/virt-viewer/virt-viewer-11.0.tar.xz
 patches/positional-arguments.patch patches
