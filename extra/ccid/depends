@@ -1,2 +1,3 @@
 pcsc-lite make
 libusb make
+perl make
