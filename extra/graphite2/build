@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+sed '/cmptest/d' tests/CMakeLists.txt > _
+mv _ tests/CMakeLists.txt
+
+mkdir build &&
+	cd build &&
+	cmake -DCMAKE_INSTALL_PREFIX=/usr .. &&
+	make
+make install
