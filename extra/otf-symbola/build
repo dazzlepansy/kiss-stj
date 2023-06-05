@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+pwd
+ls -alh
+pdfdetach -saveall Symbola.pdf
+mkdir -p "$1/usr/share/fonts/OTF/symbola"
+install -m 0644 -o root -g root Symbola.otf $1/usr/share/fonts/OTF/symbola
