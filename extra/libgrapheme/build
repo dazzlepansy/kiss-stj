@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+sed -e 's|PREFIX    = /usr/local|PREFIX    = /usr|' \
+	-e 's/LDCONFIG = ldconfig/LDCONFIG =/' \
+	config.mk > _
+mv _ config.mk
+
+make install
