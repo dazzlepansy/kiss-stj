@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+./configure \
+    --prefix=/usr \
+    --enable-pcre-16 \
+    --enable-pcre-32 \
+    --enable-pcregrep-libz \
+    --enable-pcregrep-libbz2 \
+    --enable-jit
+
+make
+make install
