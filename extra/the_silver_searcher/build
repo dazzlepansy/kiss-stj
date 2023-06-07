@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+CFLAGS="$CFLAGS -fcommon" \
+	./configure \
+	--prefix=/usr
+make
+make install
